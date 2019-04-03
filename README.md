@@ -8,8 +8,6 @@
 ### Live Demo
 > http://jinzhe.github.io/vue-calendar/
 
-
-
 ### Getting Started
 
 ``` html
@@ -42,18 +40,18 @@
     <transition name="fade">
     <div class="calendar-dialog" v-if="calendar4.show">
         <div class="calendar-dialog-mask" @click="closeByDialog"></div>
-
+        
         <div class="calendar-dialog-body">
             <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
         </div>
-
+        
     </div>
     </transition>
 </div>
 </template>
 
 <script>
-
+ 
 import calendar from './calendar.vue'
 
 export default {
@@ -118,7 +116,7 @@ export default {
             this.calendar3.show=true;
             this.calendar3.left=e.target.offsetLeft+19;
             this.calendar3.top=e.target.offsetTop+70;
-
+           
             e.stopPropagation();
             window.setTimeout(()=>{
                 document.addEventListener("click",(e)=>{

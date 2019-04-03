@@ -12,13 +12,13 @@
             <span>单选/英文/事件</span>
             <calendar
                 ref="calendar1"
-                :events="calendar1.events"
-                :lunar="calendar1.lunar"
-                :value="calendar1.value"
-                :begin="calendar1.begin"
-                :end="calendar1.end"
-                :weeks="calendar1.weeks"
-                :months="calendar1.months"
+                :events="calendar1.events" 
+                :lunar="calendar1.lunar" 
+                :value="calendar1.value" 
+                :begin="calendar1.begin" 
+                :end="calendar1.end" 
+                :weeks="calendar1.weeks" 
+                :months="calendar1.months" 
                 @select="calendar1.select"
                 @selectMonth="calendar1.selectMonth"
                 @selectYear="calendar1.selectYear"></calendar>
@@ -48,18 +48,18 @@
     <transition name="fade">
     <div class="calendar-dialog" v-if="calendar4.show">
         <div class="calendar-dialog-mask" @click="closeByDialog"></div>
-
+        
         <div class="calendar-dialog-body">
             <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
         </div>
-
+        
     </div>
     </transition>
 </div>
 </template>
 
 <script>
-
+ 
 import calendar from './calendar.vue'
 
 export default {
@@ -93,9 +93,9 @@ export default {
             },
             calendar2:{
                 range:true,
-                value:[[2019,1,1],[2019,2,16]], //默认日期
-                lunar:false, //显示农历
-                begin:[2019,1,1], //可选开始日期
+                value:[[2017,12,1],[2019,2,16]], //默认日期
+                lunar:true, //显示农历
+                begin:[2017,2,16], //可选开始日期
                 end:[2019,2,16], //可选结束日期
                 select(begin,end){
                     // console.log(begin.toString(),end.toString());
@@ -146,7 +146,7 @@ export default {
                     this.calendar5.display=displayValue.join(",");
                     // this.calendar5.show=false;
                     this.calendar5.value=value;
-
+                    
                 }
             },
         }
@@ -156,7 +156,7 @@ export default {
             this.calendar3.show=true;
             this.calendar3.left=e.target.offsetLeft+19;
             this.calendar3.top=e.target.offsetTop+70;
-
+           
             e.stopPropagation();
             window.setTimeout(()=>{
                 document.addEventListener("click",(e)=>{
